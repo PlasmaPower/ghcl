@@ -9,6 +9,8 @@ This project is licensed under the terms of the MIT license. See `LICENSE.txt` f
 
 ## Installation
 
+This project requires a `libgit2`, and `cmake` for building.
+
 Currently, all methods of installation require building from source, and a working Rust installation.
 To quickly setup Rust (and Cargo), use [rustup](https://rustup.rs).
 
