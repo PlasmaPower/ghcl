@@ -102,7 +102,13 @@ authentication:
     password: efbfd4e43d8e77c1dc24... # personal access token
 ```
 
-## This program doesn't fit my workflow!
+## FAQ
 
+### When I use ghcl, it freezes after "Cloning repository..."
+That probably means your SSH agent is misconfigured.
+I'm not sure why it causes a freeze, but to fix it, run `ssh-add ~/.ssh/id_rsa`, or whatver your GitHub RSA key is.
+You should also put that in your `.profile` or equivalent.
+
+### This program doesn't fit my workflow!
 This program is opinionated, and not intended to fit every workflow.
 However, if it's just a small option that's missing, feel free to create an issue or pull request.
