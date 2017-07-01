@@ -18,7 +18,7 @@ To quickly setup Rust (and Cargo), use [rustup](https://rustup.rs).
   git clone https://github.com/PlasmaPower/ghcl.git
   cd ghcl
   cargo build --release
-  sudo cp target/release/ghcl /usr/bin
+  sudo cp target/release/ghcl /usr/bin # or just cargo install, to install for just your user
   ```
 
 ## Arguments
