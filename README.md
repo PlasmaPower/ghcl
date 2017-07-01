@@ -108,8 +108,8 @@ authentication:
 
 ### When I use ghcl, it freezes after "Cloning repository..."
 That probably means your SSH agent is misconfigured.
-I'm not sure why it causes a freeze, but to fix it, run `ssh-add ~/.ssh/id_rsa`, or whatver your GitHub RSA key is.
-You should also put that in your `.profile` or equivalent.
+I'm not sure why it causes a freeze, but to fix it, run `ssh-add ~/.ssh/id_rsa`, or whatever your GitHub SSH key is.
+You should also put that in your `.profile`, or wherever you start `ssh-agent`.
 
 ### This program doesn't fit my workflow!
 This program is opinionated, and not intended to fit every workflow.
