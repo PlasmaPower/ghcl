@@ -4,7 +4,32 @@ rust:
   - stable
   - beta
   - nightly
+os:
+  - linux
+  - osx
+services:
+  - docker
 matrix:
   allow_failures:
     - rust: nightly
 dist: trusty
+
+before_deploy:
+  - ci/build-release.sh ghcl "${TRAVIS_TAG}-${TRAVIS_OS_NAME}"
+
+deploy:
+  provider: releases
+  api_key:
+    secure: Il1lEsWK/KxjB1VrtrZqKy3ecrl/kP9JVYIVPbvvERzxrhX5kcgB8eOjH7/JYeIiDH5Djd1ySsE31qIIhnBSJ4xzEhMH0IzTPs6s6Nmslgy/vQ/ug+AKWNb2mF+Et7qppAL0lT6xrdswJwcg43JZyVVMKVfhalVwzM+bRWqEUWMackHNf9GpaaUyn3WCo/bb4L+djG+qToG7h2VBTEB0aYcvDkV+WbdjKYnGiENKQ1EfdgI46pFLyTkjK1+JRE1pVzByfbip0tAhty3cPC5U3cpp49Iy1Ufe9bx/OXFxB+58EHQNhBvr0o74UdZUdwsltWZoDF6ReWmAW+3vmaEgYFFJ/X9q/XdTlMao4W87xRrBid6LeDG4CEwU6JuWrStWxGa9LmF9uo7Z3BsjtoYy3d/X6FC/QC9Ly12aYPEBDdSBNU8TfizYM6gEf8cLCjWM/B+/dLj5qHHn51MGG+8v8YKysbhOqtNQQsSUMhAraqpCgDsW9ToRsQukClYFPMFIOfoBU3pl7upnN94Q6Wh6Mp+Md1N5PJEjdF37z1E2Ucx3hCMbJ0MHTiqWMVcIzZEO5oqN06CdMvUyeDeEYsvenkCWx++vP7UaJXLJJE20MFIUFqTyzQjD3N6EZAT2hwyjcDMXLAH0q3CZP+c4ynNmNeObWp+JQe3zroJ800z5DBE=
+  file_glob: true
+  file: target/gh-release/*
+  skip_cleanup: true
+  on:
+    repo: PlasmaPower/ghcl
+    rust: stable
+    tags: true
+
+branches:
+  only:
+    - master
+    - /^\d+\.\d+\.\d+.*$/
