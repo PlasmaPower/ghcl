@@ -2,7 +2,7 @@ use std::io;
 use std::num;
 
 use git2;
-use app_dirs;
+use app_dirs2;
 use serde_json;
 use serde_yaml;
 use regex;
@@ -44,7 +44,7 @@ error_chain! {
         }
     }
     foreign_links {
-        AppDirs(app_dirs::AppDirsError);
+        AppDirs(app_dirs2::AppDirsError);
         Io(io::Error);
         Yaml(serde_yaml::Error);
         Git(git2::Error);

@@ -7,7 +7,7 @@ use clap;
 use serde_yaml;
 use rpassword;
 use errors::*;
-use app_dirs::{AppInfo, get_app_root, AppDataType};
+use app_dirs2::{AppInfo, get_app_root, AppDataType};
 
 use repository::{Repository, Service, GitProtocol};
 

@@ -11,7 +11,7 @@ extern crate git2;
 #[macro_use] extern crate error_chain;
 #[macro_use] extern crate serde_derive;
 extern crate serde_yaml;
-extern crate app_dirs;
+extern crate app_dirs2;
 extern crate regex;
 extern crate reqwest;
 extern crate rpassword;

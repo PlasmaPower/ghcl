@@ -1,7 +1,7 @@
 [package]
 authors = ["Lee Bousfield <ljbousfield@gmail.com>"]
 name = "ghcl"
-version = "0.1.0"
+version = "0.1.1"
 description = "GitHub Clone"
 repository = "https://github.com/PlasmaPower/ghcl"
 readme = "README.md"
@@ -13,7 +13,7 @@ license = "MIT"
 clap = "2"
 git2 = "0.6"
 error-chain = "0.10"
-app_dirs = "1"
+app_dirs2 = "2"
 serde = "1"
 serde_derive = "1"
 serde_yaml = "0.7"
