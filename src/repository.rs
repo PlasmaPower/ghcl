@@ -33,8 +33,8 @@ fn github_repo_json_git_url(json: serde_json::Value, git_protocol: GitProtocol) 
 }
 
 fn github_res<D: DeserializeOwned>(mut res: Response) -> Result<D> {
-    match *res.status() {
-        StatusCode::Ok | StatusCode::Created | StatusCode::Accepted | StatusCode::NoContent => {
+    match res.status() {
+        StatusCode::OK | StatusCode::CREATED | StatusCode::ACCEPTED | StatusCode::NO_CONTENT => {
             Ok(res.json()?)
         }
         _ => {
@@ -99,7 +99,7 @@ impl Repository {
     }
 
     pub fn fork(&self, authentication: Authentication, organization: Option<&str>, git_protocol: GitProtocol) -> Result<String> {
-        let http_client = Client::new()?;
+        let http_client = Client::new();
         match self.service {
             Service::GitHub => {
                 let mut params_map = serde_json::Map::new();
